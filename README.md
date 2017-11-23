@@ -1,15 +1,10 @@
 ### How to execute the code
 
-generate the autoloading file.
+Using Composer to generate the autoloading file:
 
 ```
 composer install
 ```
-
-
-### Dependencies
-- PHP 5.4
-
 
 ## Dev Stack Used
 
