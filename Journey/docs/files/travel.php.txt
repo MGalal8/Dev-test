@@ -1,0 +1,47 @@
+<?php
+namespace Journey;
+
+use Journey\transportation\JourneyBase;
+use Journey\sorter;
+
+
+/**
+ * Class Travel.
+ *
+ */
+ 
+class Travel
+{
+
+    private $boardingCard;
+    private $sortedBaseBoardingCard;
+
+
+    public function Card(JourneyBase $boardingCard){
+        $this->boardingCard[] = $boardingCard;
+    }
+
+     public function sortCard(){
+        $this->sortedBaseBoardingCard = Sorter::sort($this->boardingCard);
+    }
+
+
+/**
+* Output
+*/
+    public function output()
+    {
+        $txt = '<br /><ol>';
+
+        foreach( $this->sortedBaseBoardingCard as $boarding){
+
+            $txt .= '<li>' . $boarding->toString() . '</li>' ;
+        }
+        $txt .= '<li>You have arrived at your final destination. </li>';
+        $txt .= '</ol>';
+
+        return $txt;
+    }
+}
+
+
